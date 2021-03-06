@@ -1,0 +1,17 @@
+
+spring:
+  profiles.active: dev
+---
+server.port: 8453
+http.port: 8435
+spring:
+  profiles: dev
+  datasource.hikari:
+      driverClassName: oracle.jdbc.driver.OracleDriver
+      jdbcUrl: jdbc:oracle:thin:@localhost:1521:xe
+      password: john
+      username: hr
+      output.ansi.enabled: always
+
+
+
