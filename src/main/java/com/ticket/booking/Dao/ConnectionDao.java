@@ -7,14 +7,16 @@ import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 @Component
 public class ConnectionDao {
     @Autowired
     JdbcTemplate jdbcTemplate;
 
-    public employeEntity getEmployeeDetails( String Query,int employeEn, int dep,employeEntity employeEntity){
-        jdbcTemplate.query(Query , new BeanPropertyRowMapper(employeEntity.class),employeEn,dep);
-      return employeEntity ;
+    public List<employeEntity> getEmployeeDetails( String Query,int employeEn, int dep,employeEntity employeEntity){
+       return jdbcTemplate.query(Query , new BeanPropertyRowMapper<>(employeEntity.class),employeEn,dep);
+      //jdbcTemplate.queryForObject(Query,String.class,employeEn,dep);
     }
 
 }

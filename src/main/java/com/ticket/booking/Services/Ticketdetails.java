@@ -18,9 +18,8 @@ public final Logger log = LoggerFactory.getLogger(Ticketdetails.class);
 
 
     public employeEntity Getemployeesdetail(int employeE,employeEntity employeEntity){
-        employeEntity employeEn = connectionDao.getEmployeeDetails( queryConstant.employees,employeE,90,employeEntity);
+        return connectionDao.getEmployeeDetails( queryConstant.employees,employeE,90,employeEntity).get(0);
        // log.info(employeEn.getEmployeeName());
-        return employeEn;
     }
 
     public int tempval (){

@@ -3,14 +3,14 @@
         "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
         "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
-    <definition name="layout" template="/login.jsp">
+    <definition name="main" template="/WEB-INF/login.jsp">
         <put-attribute name="header" value=""/>
         <put-attribute name="body" value="" />
         <put-attribute name="footer" value="" />
     </definition>
-    <definition name="main" extends="layout">
+    <!--<definition name="main" extends="layout">
         <put-attribute name="body" value="/login.jsp"/>
-    </definition>
+    </definition>-->
 
 
 

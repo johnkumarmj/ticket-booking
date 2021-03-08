@@ -13,7 +13,7 @@ public class TilecConfig {
 
 @Bean
 @Primary
-    public ViewResolver getviewreResolver(){
+    public UrlBasedViewResolver getviewreResolver(){
     UrlBasedViewResolver viewResolver = new UrlBasedViewResolver();
     viewResolver.setViewClass(TilesView.class);
     return viewResolver;

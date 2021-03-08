@@ -15,8 +15,8 @@ import javax.servlet.http.HttpSession;
 public class applicationController {
     @Autowired
     public Ticketdetails ticketdetails;
-    @RequestMapping(method = RequestMethod.GET,value = {"/main*"})
-public @ResponseBody ModelAndView retrieve(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("employeEntity") employeEntity employeEntity){
+    @RequestMapping(method = RequestMethod.GET,value = {"/main"})
+public ModelAndView retrieve(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("employeEntity") employeEntity employeEntity){
 
     HttpSession session= request.getSession();
     if(session!=null){
@@ -24,9 +24,10 @@ System.out.println("Session is still active");
 
     }
 
-        //ticketdetails.Getemployeesdetail(101,employeEntity);
+        employeEntity=ticketdetails.Getemployeesdetail(101,employeEntity);
+    System.out.println("employee name "+employeEntity.getEmployeeName());
     String jo = "hello";
     return new ModelAndView("main");
-
+//return "main";
 }
 }
